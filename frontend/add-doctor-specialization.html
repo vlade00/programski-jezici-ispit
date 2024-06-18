@@ -44,38 +44,16 @@
             <li class="breadcrumb-item">
                 <a href="./index.html">Počena stranica</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page" id="breadcrumb"></li>
+            <li class="breadcrumb-item active" aria-current="page" >
+                Dodaj specijalizaciju
+            </li>
         </ol>
     </nav>
-    <h1 class="h3">Izmena</h1>
+    <h1 class="h3">Dodaj specijalizaciju</h1>
     <div>
         <div class="mb-3">
-            <label for="id" class="form-label">Doctor ID</label>
-            <input type="number" class="form-control" id="id" disabled >
-        </div>
-        <div class="mb-3">
-            <label for="name" class="form-label">Ime</label>
+            <label for="name" class="form-label">Naziv</label>
             <input type="text" class="form-control" id="name">
-        </div>
-        <div class="mb-3">
-            <label for="surname" class="form-label">Prezime</label>
-            <input type="text" class="form-control" id="surname">
-        </div>
-        <div class="mb-3">
-            <label for="jmbg" class="form-label">Jmbg</label>
-            <input type="text" class="form-control" id="jmbg">
-        </div>
-        <div class="mb-3">
-            <label for="specialization" class="form-label">Specijalizacija</label>
-            <select class="form-select" id="specialization"></select>
-        </div>
-        <div class="mb-3">
-            <label for="created" class="form-label">Datum kreiranja</label>
-            <input type="text" class="form-control" id="created" disabled>
-        </div>
-        <div class="mb-3">
-            <label for="updated" class="form-label">Datum promene</label>
-            <input type="text" class="form-control" id="updated" disabled>
         </div>
         <button type="submit" class="btn btn-info edit" id="save">
             <i class="fa-regular fa-floppy-disk"></i> Snimi
@@ -86,7 +64,5 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script src="./js/search.js"></script>
-<script src="./js/edit.js"></script>
+<script src="./js/add-doctor-specialization.js"></script>
 </body>
-
-</html>

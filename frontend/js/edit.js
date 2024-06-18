@@ -7,9 +7,13 @@ const breadcrumb=document.getElementById('breadcrumb')
 const doctorId=document.getElementById('id')
 const name=document.getElementById('name')
 const surname=document.getElementById('surname')
+const specialization=document.getElementById('specialization')
 const jmbg=document.getElementById('jmbg')
 const created=document.getElementById('created')
 const updated=document.getElementById('updated')
+
+
+
 
 //Ako gore ukucamo edit.html?id=npr67...
 fetch('http://localhost:8080/api/doctor/' +id)
@@ -26,6 +30,23 @@ fetch('http://localhost:8080/api/doctor/' +id)
     name.value=data.name
     surname.value=data.surname
     jmbg.value=data.jmbg
+
+    //Ucitavanje specijalizacija
+    fetch('http://localhost:8080/api/doctor-specialization')
+        .then(rsp=>rsp.json())
+        .then(specializationData=>{
+            specializationData.forEach(doctorSpecialization=>{
+                const option=document.createElement('option')
+                if(doctorSpecialization.id === data.doctorSpecialization.id){
+                    option.selected=true
+                }
+                option.value= doctorSpecialization.id
+                option.text=doctorSpecialization.name
+                specialization.appendChild(option)
+            })
+
+        })
+
     created.value=formatDate(data.createdAt)
     updated.value=formatDate(data.updatedAt)
 
@@ -38,7 +59,9 @@ fetch('http://localhost:8080/api/doctor/' +id)
             body: JSON.stringify({
                 name:name.value,
                 surname:surname.value,
-                jmbg:jmbg.value
+                jmbg:jmbg.value,
+                doctorSpecializationId:specialization.value
+
             })
 
         })

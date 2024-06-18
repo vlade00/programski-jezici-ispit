@@ -27,11 +27,11 @@
                             <a class="nav-link active" aria-current="page" href="./index.html">Početna stranica</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./add.html">Dodaj doktora</a>
+                            <a class="nav-link" href="./doctor-specialization.html">Specijalizacije doktora</a>
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <input class="form-control me-2" type="search" id="search">
+                        <input class="form-control me-2" type="search" id="search" placeholder="Unesi Jmbg...">
                         <button class="btn btn-outline-success" type="button" id="search-btn">
                             <i class="fa-solid fa-magnifying-glass"></i>Pretraži
                         </button>
@@ -40,14 +40,18 @@
             </div>
         </nav>
 
-        <h1 class="h2" id="search-title">Spisak doktora</h1>
+        <h1 class="h2">
+            <span id="search-title">Spisak doktora</span>
+            <a href="add.html" class="btn btn-sm btn-success"><i
+                class="fa-solid fa-circle-plus"></i> Dodaj dokotra</a></h1>
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Id</th>
+                <th scope="col">#</th>
                 <th scope="col">Ime</th>
                 <th scope="col">Prezime</th>
                 <th scope="col">Jmbg</th>
+                <th scope="col">Specijalizacija</th>
                 <th scope="col">Datum kreiranja</th>
                 <th scope="col">Datum promene</th>
                 <th scope="col">Opcije</th>
@@ -63,6 +67,7 @@
             <td class="name"></td>
             <td class="surname"></td>
             <td class="jmbg"></td>
+            <td class="specialization"></td>
             <td class="created"></td>
             <td class="updated"></td>
             <td>

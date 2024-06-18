@@ -27,10 +27,10 @@
                         <a class="nav-link" href="./index.html">Početna stranica</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./doctor-specialization.html">Specijalizacije doktora</a>
+                        <a class="nav-link  active" href="./doctor-specialization.html"  aria-current="page">Specijalizacije doktora</a>
                     </li>
                 </ul>
-                <div class="d-flex" >
+                <div class="d-flex">
                     <input class="form-control me-2" type="search" id="search" placeholder="Unesi Jmbg...">
                     <button class="btn btn-outline-success" type="button" id="search-btn">
                         <i class="fa-solid fa-magnifying-glass"></i>Pretraži
@@ -39,47 +39,45 @@
             </div>
         </div>
     </nav>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="./index.html">Počena stranica</a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="./doctor-specialization.html">Specijalizacije</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page" >
-                Dodaj doktora
-            </li>
-        </ol>
-    </nav>
-    <h1 class="h3">Dodaj doktora</h1>
-    <div>
-        <div class="mb-3">
-            <label for="name" class="form-label">Ime</label>
-            <input type="text" class="form-control" id="name">
-        </div>
-        <div class="mb-3">
-            <label for="surname" class="form-label">Prezime</label>
-            <input type="text" class="form-control" id="surname">
-        </div>
-        <div class="mb-3">
-            <label for="jmbg" class="form-label">Jmbg</label>
-            <input type="text" class="form-control" id="jmbg">
-        </div>
-        <div class="mb-3">
-            <label for="specialization" class="form-label">Specijalizacija</label>
-            <select class="form-select" id="specialization"></select>
-        </div>
-        <button type="submit" class="btn btn-info edit" id="save">
-            <i class="fa-regular fa-floppy-disk"></i> Snimi
-        </button>
-    </div>
+
+    <h1 class="h2" >Lista specijalizacija <a href="add-doctor-specialization.html" class="btn btn-sm btn-success"><i
+            class="fa-solid fa-circle-plus"></i></a></h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Naziv</th>
+            <th scope="col">Datum kreiranja</th>
+            <th scope="col">Datum promene</th>
+            <th scope="col">Opcije</th>
+
+        </tr>
+        </thead>
+        <tbody id="doctor-specialization-table"></tbody>
+    </table>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+<template id="doctor-specialization">
+    <tr>
+        <th scope="row" class="id"></th>
+        <td class="name"></td>
+        <td class="created"></td>
+        <td class="updated"></td>
+        <td>
+            <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-info edit">
+                    <i class="fa-solid fa-user-pen"></i> Promeni
+                </a>
+                <button type="button" class="btn btn-sm btn-danger remove">
+                    <i class="fa-solid fa-user-slash"></i> Ukloni
+                </button>
+            </div>
+        </td>
+    </tr>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="./js/search.js"></script>
-<script src="./js/add.js"></script>
+<script src="./js/specialization.js"></script>
+
 </body>
 
 </html>

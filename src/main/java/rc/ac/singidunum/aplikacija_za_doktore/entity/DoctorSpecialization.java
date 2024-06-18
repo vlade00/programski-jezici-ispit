@@ -8,34 +8,22 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-//Ime tabele
-@Entity(name="doctor")
 @NoArgsConstructor
 @Getter
 @Setter
-public class Doctor {
+@Entity(name="doctor_specialization")
+public class DoctorSpecialization {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="doctor_id")
-    //Dajes ime id-u, moze kako god
+    @Column(name="doctor_specialization_id")
     private Integer id;
 
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String name;
 
     @Column(nullable = false)
-    private String surname;
-
-    @Column(nullable = false, unique = true)
-    private String jmbg;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name="doctor_specialization_id", nullable = false)
-    private DoctorSpecialization doctorSpecialization;
-
-    @Column(nullable = false)
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
 

@@ -26,6 +26,7 @@ function fetchDoctors(url = ''){
                 copy.querySelector('.name').innerText=doctor.name
                 copy.querySelector('.surname').innerText=doctor.surname
                 copy.querySelector('.jmbg').innerText=doctor.jmbg
+                copy.querySelector('.specialization').innerText=doctor.doctorSpecialization.name
                 copy.querySelector('.created').innerText=formatDate(doctor.createdAt)
                 copy.querySelector('.updated').innerText=formatDate(doctor.updatedAt)
                 copy.querySelector('.edit').href = `./edit.html?id=${doctor.id}`
